@@ -1,1 +1,1 @@
-# agencia_viajes_web
+#Este proyecto es una aplicación web interactiva que permite a los usuarios buscar y reservar vuelos y paquetes turísticos en línea. Ofrece filtrado por destino, fechas y precios, además de integración con sistemas externos de reservas de vuelos y hoteles.
