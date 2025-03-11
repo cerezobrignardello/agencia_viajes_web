@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Vuelo</title>
+    <script>
+        function validarFormulario() {
+            let origen = document.getElementById("origen").value;
+            let destino = document.getElementById("destino").value;
+            let fecha = document.getElementById("fecha").value;
+            let plazas = document.getElementById("plazas").value;
+            let precio = document.getElementById("precio").value;
+
+            if (origen === "" || destino === "" || fecha === "" || plazas === "" || precio === "") {
+                alert("Todos los campos son obligatorios.");
+                return false;
+            }
+
+            if (plazas <= 0 || precio <= 0) {
+                alert("Las plazas y el precio deben ser valores positivos.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Agregar Vuelo</h2>
+    <form action="procesar_vuelo.php" method="post" onsubmit="return validarFormulario();">
+        Origen: <input type="text" id="origen" name="origen"><br>
+        Destino: <input type="text" id="destino" name="destino"><br>
+        Fecha: <input type="date" id="fecha" name="fecha"><br>
+        Plazas Disponibles: <input type="number" id="plazas" name="plazas"><br>
+        Precio: <input type="number" id="precio" name="precio" step="0.01"><br>
+        <input type="submit" value="Guardar Vuelo">
+    </form>
+</body>
+</html>
